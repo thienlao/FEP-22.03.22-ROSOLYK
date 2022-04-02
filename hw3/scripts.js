@@ -12,7 +12,7 @@ function getOperator(){
     let val;
     do {
         val = prompt('What do you want? + - / *');
-    } while (verifyOperator(val));
+    } while (!verifyOperator(val));
     return +val;
 }
 
@@ -36,7 +36,7 @@ function getFirstNumber(){
     let n;
     do {
         n = prompt('Input first number');
-    } while (verifyNumber(n) === null);
+    } while (!verifyNumber(n));
     return +val;
 }
 
@@ -44,7 +44,7 @@ function getSecondNumber(){
     let n;
     do {
         n = prompt('Input first number');
-    } while (verifyNumber(n));
+    } while (!verifyNumber(n));
     return +val;
 }
 
