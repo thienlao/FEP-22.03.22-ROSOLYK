@@ -6,56 +6,41 @@ let secondValue = getSecondNumber();
 
 let result = calculate (firstValue, secondValue, userPick);
 
-showResult();
+showResult(firstValue, secondValue, userPick, result);
 
 function getOperator(){
-    let val;
-    do {
-        val = prompt('What do you want? + - / *');
-    } while (!verifyOperator(val));
-    return +val;
+    let val = prompt('What do you want? + - / *');
+
+    while (verifyOperator(val)) {
+        val = prompt('You input not an operator. Try again.');
+    }
+    return val;
 }
 
 
-function verifyOperator(){
-    let pickOperator = '+ - / *';
-    if (pickOperator != '+' &&
-        pickOperator != '-' &&
-        pickOperator === '/' && 
-        pickOperator === '*'||
-        pickOperator === null){
-            alert('You input not an operator. Try again')
-        return false;
-    } else{
-        return true;
-
-    }
+function verifyOperator(pickOperator){
+    return pickOperator !== '+' && pickOperator !== '-' && pickOperator !== '/' &&  pickOperator !== '*';    
 }
 
 function getFirstNumber(){
-    let n;
-    do {
-        n = prompt('Input first number');
-    } while (!verifyNumber(n));
-    return +val;
+    let n = prompt('Input first number');
+    
+    while (verifyNumber(n)){
+        n = prompt('Input a number');
+    } 
+    return +n;
 }
 
 function getSecondNumber(){
-    let n;
-    do {
-        n = prompt('Input first number');
-    } while (!verifyNumber(n));
-    return +val;
+    let n = prompt('Input second number');
+    while (verifyNumber(n)){
+        n = prompt('Input a number');
+    } ;
+    return +n;
 }
 
 function verifyNumber(val){
-    if (isNaN(val)){
-        alert('This is not a number! Try again');
-        return false;
-    } else {
-        
-        return true;
-    }
+    return isNaN(val) || val === '' || val === null;
 }
 
 
@@ -75,5 +60,5 @@ function calculate(firstValue, secondValue, userPick){
 }
 
 function showResult(firstValue,secondValue,userPick,result){
-    alert(`Answer is: ${firstValue} ${userPick} ${secondValue} = ${result}`);
+    alert(`${firstValue} ${userPick} ${secondValue} = ${result}`);
 }
