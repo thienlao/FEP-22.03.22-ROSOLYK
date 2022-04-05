@@ -52,10 +52,10 @@ function calculate(userPick, value){
                 result /= +value[i];
             }
             return result;
-        case '-':
+        case '*':
             result = +value[0];
             for(let i = 1; i < value.length; i++) {
-                result += +value[i];
+                result *= +value[i];
             }
             return result;
     }
