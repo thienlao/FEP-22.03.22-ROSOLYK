@@ -1,26 +1,19 @@
 'use strict';
 
-// const calc = createCalculator(10);
-// function createCalculator(calc){
-    
-// };
-
-// calc.sum(5); /// 15
-// calc.mult(10); // 150
-// calc.sub(40); // 110
-// calc.div(10); // 11
-// calc.set(100); //
-
+const calc = createCalculator(10);
 function createCalculator(n){
-    return function(a){
-        return function(b){
-            return f(a, b);
-        };
-    };
+    let result = n;
+    return {
+        add: (b) => (n += b),
+        sub: (b) => (n -= b),
+        mult: (b) => (n *= b),
+        div: (b) => (n /= b),
+        set: (b) => (n = b),
+        get: () => n,
+    };   
 }
-
-function sum(a,b) {
-    return a + b;
-}
-
-let 
+console.log(calc.add(5)); /// 15
+console.log(calc.mult(10)); // 150
+console.log(calc.sub(40)); // 110
+console.log(calc.div(10)); // 11
+console.log(calc.set(100)); //
