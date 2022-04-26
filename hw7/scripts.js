@@ -2,7 +2,6 @@
 
 const calc = createCalculator(10);
 function createCalculator(n){
-    let result = n;
     return {
         add: (b) => (n += b),
         sub: (b) => (n -= b),
