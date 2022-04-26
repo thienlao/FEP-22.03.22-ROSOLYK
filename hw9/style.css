@@ -1,0 +1,19 @@
+.task-list {
+    margin-bottom: 20px;
+}
+
+.task-item.done {
+    background-color: greenyellow;
+}
+
+.errorInput, input:focus.errorInput {
+    border-color: red;
+}
+
+.error {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
