@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./styles.css" />
+        <script src="scripts.js" async></script>
+        <title>Todo list</title>
+    </head>
+    <body>
+        <div class="container">
+            <div id="taskList" class="task-list u-full-width">
+            </div>
+            <form id="addTaskForm">
+                <div class="row">
+                    <div class="ten columns">
+                        <input
+                            type="text"
+                            id="taskNameInput"
+                            class="u-full-width"
+                        />
+                        <span id="errorContainer" class="error hidden"></span>
+                    </div>
+                    <div class="two columns">
+                        <button type="submit" id="addBtn" class="u-full-width">Add</button>
+                    </div>
+                </div>
+            </form>
+            <script type="text/template" id="taskItemTemplate">
+                <div class="task-item u-full-width {{doneClass}}" data-id="{{id}}">
+                    {{title}}
+                    <span class="delete-btn">✘</span>
+                </div>
+            </script>
+        </div>
+    </body>
+</html>
