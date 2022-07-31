@@ -1,8 +1,8 @@
 let userPick = getOperator();
 
-let firstValue = getFirstNumber();
+let firstValue = getNumber('first number?');
 
-let secondValue = getSecondNumber();
+let secondValue = getNumber('second number?');
 
 let result = calculate (firstValue, secondValue, userPick);
 
@@ -22,20 +22,12 @@ function verifyOperator(pickOperator){
     return pickOperator !== '+' && pickOperator !== '-' && pickOperator !== '/' &&  pickOperator !== '*';    
 }
 
-function getFirstNumber(){
-    let n = prompt('Input first number');
+function getNumber(message){
+    let n = prompt(message);
     
     while (verifyNumber(n)){
         n = prompt('Input a number');
     } 
-    return +n;
-}
-
-function getSecondNumber(){
-    let n = prompt('Input second number');
-    while (verifyNumber(n)){
-        n = prompt('Input a number');
-    } ;
     return +n;
 }
 
